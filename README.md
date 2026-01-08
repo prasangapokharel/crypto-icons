@@ -9,34 +9,34 @@ Use icons directly from our CDN without any installation:
 ### Crypto Icons (SVG)
 ```html
 <!-- Bitcoin icon -->
-<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/crypto/btc.svg" alt="Bitcoin">
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/crypto/btc.svg" alt="Bitcoin">
 
-<!-- Ethereum icon -->
-<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/crypto/eth.svg" alt="Ethereum">
+<!-- Solana icon -->
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/crypto/sol.svg" alt="Solana">
 
 <!-- Use latest version (not recommended for production) -->
-<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@latest/crypto/btc.svg" alt="Bitcoin">
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons/crypto/btc.svg" alt="Bitcoin">
 ```
 
 ### Currency Icons (SVG)
 ```html
 <!-- US Dollar -->
-<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/currency/usd.svg" alt="USD">
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/currency/usd.svg" alt="USD">
 
 <!-- Euro -->
-<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/currency/eur.svg" alt="EUR">
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/currency/eur.svg" alt="EUR">
 ```
 
 ### Binance Logos (PNG)
 ```html
 <!-- Bitcoin logo from Binance -->
-<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/binance/btc.png" alt="Bitcoin">
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/binance/BTC.png" alt="Bitcoin">
 ```
 
 ### In CSS
 ```css
 .crypto-icon {
-  background-image: url('https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/crypto/btc.svg');
+  background-image: url('https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/crypto/btc.svg');
   width: 32px;
   height: 32px;
 }
@@ -45,7 +45,7 @@ Use icons directly from our CDN without any installation:
 ### In JavaScript
 ```javascript
 // Fetch icon dynamically
-const iconUrl = 'https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/crypto/btc.svg';
+const iconUrl = 'https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/crypto/btc.svg';
 fetch(iconUrl)
   .then(response => response.text())
   .then(svg => document.getElementById('icon').innerHTML = svg);
@@ -198,12 +198,12 @@ All download scripts follow the same pattern:
 
 | Icon Type | CDN Pattern | Example |
 |-----------|-------------|---------|
-| Crypto (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/crypto/{symbol}.svg` | `crypto/btc.svg` |
-| Currency (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/currency/{code}.svg` | `currency/usd.svg` |
-| Binance (PNG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/binance/{symbol}.png` | `binance/btc.png` |
-| Heroicons (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/icons/{name}.svg` | `icons/home.svg` |
+| Crypto (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/crypto/{symbol}.svg` | `crypto/btc.svg` |
+| Currency (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/currency/{code}.svg` | `currency/usd.svg` |
+| Binance (PNG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/binance/{SYMBOL}.png` | `binance/BTC.png` |
+| Heroicons (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/icons/{name}.svg` | `icons/home.svg` |
 
-**Note:** Replace `1.0.0` with the specific version you want to use, or use `@latest` for the most recent version (not recommended for production).
+**Note:** Use `@v1.0.0` format for specific version. For latest (not recommended in production), omit the version tag.
 
 ## 📝 License
 
