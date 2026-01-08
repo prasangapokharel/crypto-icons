@@ -1,8 +1,8 @@
 # Crypto Icons Collection
 
-A comprehensive collection of cryptocurrency, currency, and UI icons. Access thousands of crypto and currency icons via jsDelivr CDN or download them for local use.
+A comprehensive collection of cryptocurrency, currency, and UI icons. Access thousands of crypto and currency icons via jsDelivr CDN.
 
-## 🌐 CDN Usage (jsDelivr)
+## 🌐 CDN Usage
 
 Use icons directly from our CDN without any installation:
 
@@ -11,11 +11,11 @@ Use icons directly from our CDN without any installation:
 <!-- Bitcoin icon -->
 <img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/crypto/btc.svg" alt="Bitcoin">
 
+<!-- Ethereum icon -->
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/crypto/eth.svg" alt="Ethereum">
+
 <!-- Solana icon -->
 <img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/crypto/sol.svg" alt="Solana">
-
-<!-- Use latest version (not recommended for production) -->
-<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons/crypto/btc.svg" alt="Bitcoin">
 ```
 
 ### Currency Icons (SVG)
@@ -25,12 +25,18 @@ Use icons directly from our CDN without any installation:
 
 <!-- Euro -->
 <img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/currency/eur.svg" alt="EUR">
+
+<!-- British Pound -->
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/currency/gbp.svg" alt="GBP">
 ```
 
 ### Binance Logos (PNG)
 ```html
-<!-- Bitcoin logo from Binance -->
+<!-- Bitcoin logo (note: uppercase symbol) -->
 <img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/binance/BTC.png" alt="Bitcoin">
+
+<!-- Ethereum logo -->
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/binance/ETH.png" alt="Ethereum">
 ```
 
 ### In CSS
@@ -39,6 +45,7 @@ Use icons directly from our CDN without any installation:
   background-image: url('https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/crypto/btc.svg');
   width: 32px;
   height: 32px;
+  background-size: cover;
 }
 ```
 
@@ -51,166 +58,47 @@ fetch(iconUrl)
   .then(svg => document.getElementById('icon').innerHTML = svg);
 ```
 
-## 📥 Local Development
+### React Example
+```jsx
+function CryptoIcon({ symbol }) {
+  return (
+    <img 
+      src={`https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/crypto/${symbol}.svg`}
+      alt={symbol}
+      width="32"
+      height="32"
+    />
+  );
+}
 
-For contributors and developers who want to maintain the icon collection:
-
-## 📦 What's Included
-
-- **Crypto Icons** - Cryptocurrency icons from Binance Icons repository
-- **Currency Icons** - Fiat currency icons 
-- **Binance Logos** - Official coin logos from Binance CDN
-- **Heroicons** - Tailwind's beautiful hand-crafted SVG icons
-
-## 📂 Directory Structure
-
-```
-crypto-icons/
-├── crypto/           # Cryptocurrency SVG icons
-├── currency/         # Fiat currency SVG icons
-├── binance/          # Binance coin logos (PNG)
-├── heroicons/        # Heroicons outline 24px SVG icons
-├── download.py       # Download crypto icons from GitHub
-├── download_currency.py   # Download currency icons
-├── download_binance.py    # Download Binance logos via API
-└── icons.py          # Download Heroicons
+// Usage: <CryptoIcon symbol="btc" />
 ```
 
-## 🚀 Quick Start
+## 📊 Available Icons
 
-### Prerequisites
+- **500+ Crypto Icons**: BTC, ETH, SOL, ADA, XRP, DOGE, BNB, and more
+- **50+ Currency Icons**: USD, EUR, GBP, JPY, CNY, and more
+- **800+ Binance Logos**: High-quality PNG logos for all traded coins
 
-```bash
-pip install aiohttp requests beautifulsoup4
-```
+## 🔗 CDN URL Patterns
 
-### Download All Icons
-
-**1. Download Crypto Icons**
-```bash
-python download.py
-```
-Downloads from: `github.com/VadimMalykhin/binance-icons/tree/main/crypto`  
-Output: `crypto/`
-
-**2. Download Currency Icons**
-```bash
-python download_currency.py
-```
-Downloads from: `github.com/VadimMalykhin/binance-icons/tree/main/currency`  
-Output: `currency/`
-
-**3. Download Binance Logos**
-```bash
-python download_binance.py
-```
-Downloads from: Binance API + CDN (`bin.bnbstatic.com`)  
-Output: `binance/`
-
-**4. Download Heroicons**
-```bash
-python icons.py
-```
-Downloads from: `github.com/tailwindlabs/heroicons/tree/master/src/24/outline`  
-Output: `heroicons/outline/`
-
-## 🎯 Features
-
-- ✅ **Async/Concurrent Downloads** - Fast downloads with configurable concurrency (30 simultaneous downloads)
-- ✅ **Smart Caching** - Skips already downloaded files
-- ✅ **Dynamic Symbol Fetching** - Automatically discovers new coins via Binance API
-- ✅ **Error Handling** - Gracefully handles missing files and network errors
-- ✅ **Clean Progress Output** - Visual feedback for each download
-  - ✓ Success
-  - ✗ Failed/Not found
-  - ⊙ Already exists
-
-## 📖 Usage Examples
-
-### Download Specific Icons
-
-Each script can be run independently:
-
-```bash
-# Only get cryptocurrency icons
-python download.py
-
-# Only get currency icons  
-python download_currency.py
-
-# Only get Binance logos (dynamically fetches all traded coins)
-python download_binance.py
-
-# Only get Heroicons
-python icons.py
-```
-
-### Customization
-
-Edit the configuration section in each script:
-
-```python
-# Example: Change concurrency
-CONCURRENCY = 50  # Download 50 files at once
-
-# Example: Change output directory
-OUT_DIR = Path("my-icons")
-```
-
-## 🔄 Keeping Icons Updated
-
-Simply re-run the scripts to fetch new icons:
-
-```bash
-python download_binance.py
-```
-
-The scripts will automatically:
-- Discover new coins/icons
-- Skip existing files
-- Download only what's missing
-
-## 📊 Statistics
-
-- **Crypto Icons**: ~500+ SVG files
-- **Currency Icons**: ~50+ SVG files
-- **Binance Logos**: 800+ PNG files (dynamic)
-- **Heroicons**: 290+ SVG files
-
-## 🛠️ Technical Details
-
-### Architecture
-
-All download scripts follow the same pattern:
-1. Fetch icon list from GitHub API or Binance API
-2. Create concurrent download tasks with semaphore limiting
-3. Download and save to appropriate directories
-4. Provide real-time progress feedback
-
-### Dependencies
-
-- `aiohttp` - Async HTTP client
-- `requests` - Sync HTTP client (for Binance API)
-- `beautifulsoup4` - HTML parsing (if needed)
-- `pathlib` - Cross-platform path handling
-
-## 🔗 CDN Links Reference
-
-| Icon Type | CDN Pattern | Example |
+| Icon Type | URL Pattern | Example |
 |-----------|-------------|---------|
-| Crypto (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/crypto/{symbol}.svg` | `crypto/btc.svg` |
-| Currency (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/currency/{code}.svg` | `currency/usd.svg` |
-| Binance (PNG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/binance/{SYMBOL}.png` | `binance/BTC.png` |
-| Heroicons (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/icons/{name}.svg` | `icons/home.svg` |
+| Crypto (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/crypto/{symbol}.svg` | `btc.svg` |
+| Currency (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/currency/{code}.svg` | `usd.svg` |
+| Binance (PNG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@v1.0.0/binance/{SYMBOL}.png` | `BTC.png` |
 
-**Note:** Use `@v1.0.0` format for specific version. For latest (not recommended in production), omit the version tag.
+**Note:** 
+- Use `@v1.0.0` for specific version (recommended for production)
+- Omit version tag for latest (e.g., `/crypto-icons/crypto/btc.svg`)
+- Binance logos use **uppercase** symbols (BTC, ETH, etc.)
+- Crypto/currency icons use **lowercase** symbols (btc, eth, etc.)
 
 ## 📝 License
 
 MIT License - See [LICENSE](LICENSE) file for details.
 
-This is a collection of icons from various sources. Please refer to the original repositories for their specific licensing:
-
+This is a collection of icons from various sources:
 - [Binance Icons](https://github.com/VadimMalykhin/binance-icons)
 - [Heroicons](https://github.com/tailwindlabs/heroicons) (MIT)
 - Binance Logo CDN
@@ -218,14 +106,13 @@ This is a collection of icons from various sources. Please refer to the original
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
-- Add new icon sources
-- Improve download scripts
-- Fix bugs
-- Update documentation
+- Report issues or request new icons
+- Submit pull requests
+- Improve documentation
 
 ## 📮 Support
 
-For issues or questions, please open an issue on GitHub.
+For issues or questions, please [open an issue](https://github.com/prasangapokharel/crypto-icons/issues) on GitHub.
 
 ---
 
