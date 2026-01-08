@@ -1,0 +1,35 @@
+{
+  "name": "@prasangapokharel/crypto-icons",
+  "version": "1.0.0",
+  "description": "A comprehensive collection of cryptocurrency, currency, and UI icons for easy CDN access",
+  "main": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prasangapokharel/crypto-icons.git"
+  },
+  "keywords": [
+    "crypto",
+    "cryptocurrency",
+    "icons",
+    "svg",
+    "bitcoin",
+    "ethereum",
+    "binance",
+    "currency",
+    "heroicons",
+    "cdn"
+  ],
+  "author": "Prasanga Pokharel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prasangapokharel/crypto-icons/issues"
+  },
+  "homepage": "https://github.com/prasangapokharel/crypto-icons#readme",
+  "jsdelivr": "crypto/",
+  "files": [
+    "crypto/**/*.svg",
+    "currency/**/*.svg",
+    "binance/**/*.png",
+    "icons/**/*.svg"
+  ]
+}

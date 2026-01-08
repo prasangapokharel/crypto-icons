@@ -1,6 +1,59 @@
 # Crypto Icons Collection
 
-A comprehensive collection of cryptocurrency, currency, and UI icons downloaded from multiple sources. This repository provides easy-to-use scripts to fetch and maintain up-to-date icon sets.
+A comprehensive collection of cryptocurrency, currency, and UI icons. Access thousands of crypto and currency icons via jsDelivr CDN or download them for local use.
+
+## 🌐 CDN Usage (jsDelivr)
+
+Use icons directly from our CDN without any installation:
+
+### Crypto Icons (SVG)
+```html
+<!-- Bitcoin icon -->
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/crypto/btc.svg" alt="Bitcoin">
+
+<!-- Ethereum icon -->
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/crypto/eth.svg" alt="Ethereum">
+
+<!-- Use latest version (not recommended for production) -->
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@latest/crypto/btc.svg" alt="Bitcoin">
+```
+
+### Currency Icons (SVG)
+```html
+<!-- US Dollar -->
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/currency/usd.svg" alt="USD">
+
+<!-- Euro -->
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/currency/eur.svg" alt="EUR">
+```
+
+### Binance Logos (PNG)
+```html
+<!-- Bitcoin logo from Binance -->
+<img src="https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/binance/btc.png" alt="Bitcoin">
+```
+
+### In CSS
+```css
+.crypto-icon {
+  background-image: url('https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/crypto/btc.svg');
+  width: 32px;
+  height: 32px;
+}
+```
+
+### In JavaScript
+```javascript
+// Fetch icon dynamically
+const iconUrl = 'https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/crypto/btc.svg';
+fetch(iconUrl)
+  .then(response => response.text())
+  .then(svg => document.getElementById('icon').innerHTML = svg);
+```
+
+## 📥 Local Development
+
+For contributors and developers who want to maintain the icon collection:
 
 ## 📦 What's Included
 
@@ -141,12 +194,25 @@ All download scripts follow the same pattern:
 - `beautifulsoup4` - HTML parsing (if needed)
 - `pathlib` - Cross-platform path handling
 
+## 🔗 CDN Links Reference
+
+| Icon Type | CDN Pattern | Example |
+|-----------|-------------|---------|
+| Crypto (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/crypto/{symbol}.svg` | `crypto/btc.svg` |
+| Currency (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/currency/{code}.svg` | `currency/usd.svg` |
+| Binance (PNG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/binance/{symbol}.png` | `binance/btc.png` |
+| Heroicons (SVG) | `https://cdn.jsdelivr.net/gh/prasangapokharel/crypto-icons@1.0.0/icons/{name}.svg` | `icons/home.svg` |
+
+**Note:** Replace `1.0.0` with the specific version you want to use, or use `@latest` for the most recent version (not recommended for production).
+
 ## 📝 License
 
-This is a collection of icons from various sources. Please refer to the original repositories for licensing information:
+MIT License - See [LICENSE](LICENSE) file for details.
+
+This is a collection of icons from various sources. Please refer to the original repositories for their specific licensing:
 
 - [Binance Icons](https://github.com/VadimMalykhin/binance-icons)
-- [Heroicons](https://github.com/tailwindlabs/heroicons)
+- [Heroicons](https://github.com/tailwindlabs/heroicons) (MIT)
 - Binance Logo CDN
 
 ## 🤝 Contributing
